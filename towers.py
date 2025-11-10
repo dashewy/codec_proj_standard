@@ -30,9 +30,9 @@ def get_input():
       letter = choices[i]
       print(f"Enter {letter} for {name}")
     
-    user_input = input("")
+    user_input = input("").upper()
     
-    if user_input.upper() in choices:
+    if user_input in choices:
       for i in range(len(stacks)):
         if user_input == choices[i]:
           return stacks[i]
@@ -63,5 +63,6 @@ while right_stack.get_size() != num_disks:
     
     else:
       print("\n\nInvalid Move. Try Again")
+      
 print(f'''\n\nYou completed the game in {num_user_moves} moves, 
       and the optimal number of moves is {num_optimal_moves}''')
